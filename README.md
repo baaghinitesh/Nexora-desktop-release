@@ -12,12 +12,12 @@ Nexora is designed and officially maintained by [Launch Your Concept](https://ww
 
 **Get the latest stable release for Windows:**
 
-[![Download Nexora](https://img.shields.io/badge/Download-Nexora%20Installer-06b6d4?style=for-the-badge&logo=windows)](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest)
+[![Download Nexora](https://img.shields.io/badge/Download-Nexora%20Installer-06b6d4?style=for-the-badge&logo=windows)](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest/download/Nexora-Setup.exe)
 
 *Supported OS: Windows 10 & 11 (64-bit)*
 
 ### How to Install:
-1. Click the download badge above or navigate to the [Releases Page](https://github.com/baaghinitesh/Nexora-desktop-release/releases) to download `Nexora-Setup-vX.Y.Z.exe`.
+1. Click the download badge above to download `Nexora-Setup.exe` directly, or navigate to the [Releases Page](https://github.com/baaghinitesh/Nexora-desktop-release/releases) to find specific releases.
 2. Open the downloaded installer.
 3. Follow the installation wizard (Nexora will automatically request permissions to set up local firewall rules).
 4. Launch Nexora from the Desktop or Start Menu!
