@@ -8,19 +8,29 @@ Nexora is designed and officially maintained by [Launch Your Concept](https://ww
 
 ---
 
-## 🚀 Download
+## 🚀 Download Nexora
 
-**Get the latest stable release for Windows:**
+Choose your platform to get the latest stable version of Nexora.
 
-[![Download Nexora](https://img.shields.io/badge/Download-Nexora%20Installer-06b6d4?style=for-the-badge&logo=windows)](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest/download/Nexora-Setup.exe)
+| 💻 Nexora Desktop (Windows) | 📱 Nexora Mobile (Android) |
+| :---: | :---: |
+| [![Download Windows](https://img.shields.io/badge/Download-Desktop%20App%20(Windows)-0284c7?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest/download/Nexora-Setup.exe) | [![Download Android](https://img.shields.io/badge/Download-Mobile%20App%20(APK)-10b981?style=for-the-badge&logo=android&logoColor=white)](https://github.com/baaghinitesh/updated-mouse-app/releases/latest/download/Nexora-Mobile.apk) |
+| **File:** `Nexora-Setup.exe` | **File:** `Nexora-Mobile.apk` |
+| *Windows 10 & 11 (64-bit)* | *Android 8.0 or higher* |
 
-*Supported OS: Windows 10 & 11 (64-bit)*
+### Quick Installation Guide:
 
-### How to Install:
-1. Click the download badge above to download `Nexora-Setup.exe` directly, or navigate to the [Releases Page](https://github.com/baaghinitesh/Nexora-desktop-release/releases) to find specific releases.
-2. Open the downloaded installer.
-3. Follow the installation wizard (Nexora will automatically request permissions to set up local firewall rules).
-4. Launch Nexora from the Desktop or Start Menu!
+#### For Desktop (Windows):
+1. Click the **Download Desktop App** badge above to get the `Nexora-Setup.exe` file.
+2. Open the downloaded installer and follow the setup wizard.
+3. The installer will automatically configure the Windows Firewall rules for you.
+4. Launch Nexora from your Desktop or Start Menu!
+
+#### For Mobile (Android):
+1. Click the **Download Mobile App** badge above to download the `Nexora-Mobile.apk` file on your Android device.
+2. Open the downloaded `.apk` file (you may need to allow "Install from Unknown Sources" in your browser/file manager settings).
+3. Follow the Android package installer prompts to install the app.
+4. Launch Nexora Mobile and scan the QR code on your PC screen to connect!
 
 ---
 
