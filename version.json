@@ -1,0 +1,20 @@
+{
+  "desktop": {
+    "latest_version": "1.0.4",
+    "min_version": "1.0.4",
+    "release_url": "https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest",
+    "github_download_url": "https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest/download/Nexora-Setup.exe",
+    "microsoft_store_url": "ms-windows-store://pdp/?ProductId=LaunchYourConcept.NexoraDesktop",
+    "release_notes": "Serverless forced-update system, Microsoft Store and GitHub installer detection, stability improvements.",
+    "force_update": false
+  },
+  "android": {
+    "latest_version": "1.0.7",
+    "min_version": "1.0.7",
+    "release_url": "https://github.com/baaghinitesh/updated-mouse-app/releases/latest",
+    "github_download_url": "https://github.com/baaghinitesh/updated-mouse-app/releases/latest/download/Nexora-Mobile.apk",
+    "play_store_url": "https://play.google.com/store/apps/details?id=com.nexoracli",
+    "release_notes": "Serverless forced-update system, Play Store and GitHub installer detection, stability improvements.",
+    "force_update": false
+  }
+}
