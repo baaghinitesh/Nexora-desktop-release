@@ -1,22 +1,12 @@
 <div align="center">
 
-<img src="assets/round-nexora-logo.png" width="130" alt="Nexora Logo" />
-
-```
-███╗   ██╗███████╗██╗  ██╗ ██████╗ ██████╗  █████╗
-████╗  ██║██╔════╝╚██╗██╔╝██╔═══██╗██╔══██╗██╔══██╗
-██╔██╗ ██║█████╗   ╚███╔╝ ██║   ██║██████╔╝███████║
-██║╚██╗██║██╔══╝   ██╔██╗ ██║   ██║██╔══██╗██╔══██║
-██║ ╚████║███████╗██╔╝ ██╗╚██████╔╝██║  ██║██║  ██║
-╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
-```
-
 # **NEXORA — UNIVERSAL PC REMOTE CONTROL**
 ### *Transform your mobile device into a powerful wireless trackpad, keyboard, launcher & drawing tablet for Windows*
 
 [![Platform: Windows](https://img.shields.io/badge/Platform-Windows%2010%2F11-0078D4?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest)
-[![Platform: Android](https://img.shields.io/badge/Platform-Android%208.0%2B-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://github.com/baaghinitesh/updated-mouse-app/releases/latest)
-[![Version](https://img.shields.io/badge/Version-1.0.4-0284c7?style=for-the-badge)](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest)
+[![Platform: Android](https://img.shields.io/badge/Platform-Android%208.0%2B-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest)
+[![Desktop Version](https://img.shields.io/badge/Desktop%20Version-1.0.4-0284c7?style=for-the-badge)](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest)
+[![Mobile Version](https://img.shields.io/badge/Mobile%20Version-1.0.7-10b981?style=for-the-badge)](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
 <br />
@@ -25,9 +15,9 @@
 
 <br /><br />
 
-**[💻 Download Windows Desktop App](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest)**
+**[💻 Download Windows Desktop App (.exe)](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest)**
 &nbsp;&nbsp;·&nbsp;&nbsp;
-**[📱 Download Android Mobile APK](https://github.com/baaghinitesh/updated-mouse-app/releases/latest)**
+**[📱 Download Android Mobile App (.apk)](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest)**
 &nbsp;&nbsp;·&nbsp;&nbsp;
 **[🌐 Official Website](https://www.launchyourconcept.com)**
 &nbsp;&nbsp;·&nbsp;&nbsp;
@@ -39,26 +29,35 @@
 
 ## 🌟 Overview
 
-**Nexora** is a seamless wireless control ecosystem that turns your Android phone into an ultra-low-latency remote command center for your Windows PC. Whether you want to control media from your couch, drag-select text with precision gestures, launch games and websites in one tap, annotate your desktop screen live, sync your clipboard, or transfer large files at 40+ MB/s — Nexora handles it all locally over your Wi-Fi network without any cloud dependency.
+<div align="center">
+  <img src="assets/round-nexora-logo.png" width="90" alt="Nexora Logo" />
+</div>
 
-Nexora is designed and officially maintained by **[Launch Your Concept](https://www.launchyourconcept.com/)**.
+**Nexora** is a high-performance wireless PC control ecosystem that turns your Android smartphone into an ultra-low-latency remote command hub for your Windows computer. Whether you want to navigate with precision multi-touch trackpad gestures, launch 50+ desktop apps and websites with a single tap, sync your clipboard bi-directionally, draw live annotations on your PC screen, or transfer large files at 40+ MB/s — Nexora handles it all locally over your Wi-Fi network with zero cloud dependency.
+
+Nexora is designed, engineered, and maintained by **[Launch Your Concept](https://www.launchyourconcept.com/)**.
 
 ---
 
-## 🚀 Quick Download & Install
+## 🚀 Quick Download & Installation
+
+<div align="center">
 
 | 💻 Nexora Desktop (Windows) | 📱 Nexora Mobile (Android) |
 | :---: | :---: |
-| [![Download Windows](https://img.shields.io/badge/Download-Desktop%20Installer%20(.exe)-0284c7?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest) | [![Download Android](https://img.shields.io/badge/Download-Mobile%20APK%20(.apk)-10b981?style=for-the-badge&logo=android&logoColor=white)](https://github.com/baaghinitesh/updated-mouse-app/releases/latest) |
-| *Supported: Windows 10 & 11 (64-bit)* | *Supported: Android 8.0 or higher* |
+| [![Download Windows](https://img.shields.io/badge/Download-Desktop%20Installer%20(.exe)-0284c7?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest) | [![Download Android](https://img.shields.io/badge/Download-Mobile%20APK%20(.apk)-10b981?style=for-the-badge&logo=android&logoColor=white)](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest) |
+| **Latest: v1.0.4**<br />*Windows 10 & 11 (64-bit)* | **Latest: v1.0.7**<br />*Android 8.0 or higher* |
 
-### Easy Setup Guide:
+</div>
+
+### 3-Step Setup:
 1. **Desktop (Windows)**:
-   - Download **`Nexora-Setup.exe`** from the latest release.
-   - Run the installer. Windows firewall rules and services will be configured automatically.
-   - Launch Nexora Desktop to view your local IP and QR pairing code.
+   - Download **`Nexora-Setup.exe`** from the [Latest Release](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest).
+   - Run the installer. Windows firewall rules and background services configure automatically.
+   - Launch Nexora Desktop to display your local IP and QR pairing code.
 2. **Mobile (Android)**:
-   - Download **`Nexora-Mobile.apk`** and install it on your Android device.
+   - Download **`Nexora-Mobile.apk`** from the [Latest Release](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest).
+   - Install the APK on your Android phone.
    - Open Nexora Mobile, tap **Connect**, and scan the QR code on your PC screen!
 
 ---
@@ -82,7 +81,7 @@ Nexora is designed and officially maintained by **[Launch Your Concept](https://
 
 ### 🖱️ Smart Touchpad with Drag-Select
 - **Native Double-Tap-and-Drag**: Double-tap and hold to seamlessly highlight/select text, drag windows, and select blocks of code just like a real PC trackpad.
-- **Ultra-Low Latency (<5ms)**: UDP fire-and-forget streaming for real-time cursor responsiveness.
+- **Ultra-Low Latency (<5ms)**: UDP streaming for real-time cursor responsiveness.
 - **Full Gesture Suite**: Two-finger fluid scrolling, pinch-to-zoom, two-finger right-click, three-finger middle-click, and dedicated infinite scrollbar.
 
 ### ⌨️ Advanced PC Keyboard & Media Center
@@ -101,7 +100,7 @@ Nexora is designed and officially maintained by **[Launch Your Concept](https://
 
 ### 📁 High-Speed File Transfer
 - **40+ MB/s Wi-Fi Speed**: Chunked streaming pipeline with SHA-256 integrity verification.
-- **Direct PC Integration**: Transferred photos, videos, and archives land directly in your Windows `Downloads` folder.
+- **Direct PC Integration**: Transferred photos, videos, and archives land directly in your Windows `Downloads / Nexora Transferred Files` folder.
 
 ---
 
@@ -121,13 +120,6 @@ Intuitive, dark-mode native mobile screens designed for speed and comfort:
 | :---: | :---: | :---: | :---: |
 | ![Mobile Home](screenshots/nexora-mobile1.jpeg) | ![Touchpad](screenshots/nexora-mobile2.jpeg) | ![Keyboard](screenshots/nexora-mobile3.jpeg) | ![Pen Tablet](screenshots/nexora-mobile4.jpeg) |
 
-### Step-by-Step Connection Guide
-Connecting your mobile phone to your PC takes only 3 seconds:
-
-| Step 1: Read IP Details | Step 2: Input & Connect | Step 3: Check Firewall Rules |
-| :---: | :---: | :---: |
-| ![Instruction 1](screenshots/nexora-desktop-instructions1.jpeg) | ![Instruction 2](screenshots/nexora-desktop-instructions2.jpeg) | ![Instruction 3](screenshots/nexora-desktop-instructions3.jpeg) |
-
 ---
 
 ## 📱 Connection Methods
@@ -146,7 +138,7 @@ Connecting your mobile phone to your PC takes only 3 seconds:
 
 ## 🔄 Seamless Auto-Updates
 
-Nexora Desktop comes with a built-in automated background updater:
+Nexora comes with a built-in automated update mechanism:
 1. **Check**: On startup, Nexora checks the official GitHub repository for new releases.
 2. **Download**: Updates are downloaded silently in the background.
 3. **Apply**: A prompt will notify you when the update is ready to restart and install.
