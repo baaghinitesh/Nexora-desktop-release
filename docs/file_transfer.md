@@ -1,63 +1,56 @@
-# 📁 High-Speed File Transfer Feature
+# High-Speed Wireless File Transfer
 
-The **File Transfer** feature allows you to send files (photos, videos, documents, zip archives) from your mobile device to your PC's Downloads folder.
+[← Back to Main Documentation](../README.md)
+
+Nexora includes an ultra-fast wireless local file transfer pipeline, allowing you to transfer photos, 4K videos, documents, and archives between PC and mobile at speeds up to 40+ MB/s.
 
 ---
 
-## 🛠️ How It Works
-
-Nexora runs an HTTP API server on your PC (port 3000) to receive and process file upload streams.
+## Transfer Pipeline
 
 ```mermaid
 sequenceDiagram
-    participant Mobile as Mobile App
-    participant Server as HTTP API (Port 3000)
-    participant Disk as Host Storage (Downloads/Nexora)
+    autonumber
+    participant Client as Sender (Mobile / PC)
+    participant API as HTTP Chunk API (:3000)
+    participant FS as Local File System (Downloads)
+    participant WS as WebSocket Events (:8080)
 
-    Mobile->>Server: POST /api/upload (Multipart Stream)
-    Server->>Server: Receive chunked buffer & calculate speed
-    Server->>Disk: Write stream to file
-    Server->>Mobile: JSON Response { success: true, filePath: "..." }
+    Client->>API: POST /api/files/upload (Chunk Stream + Metadata)
+    loop Data Streaming
+        API->>FS: Write Chunk to Disk Buffer
+        API->>WS: Broadcast { type: "transfer_progress", percent: 45.2, speed: "38 MB/s" }
+    end
+    API->>FS: Verify SHA-256 Checksum & Finalize
+    API-->>Client: 200 OK { success: true, path: "..." }
+    API->>WS: Broadcast { type: "transfer_completed" }
 ```
 
-### 1. HTTP Endpoint Routing
-- **Upload Route**: `POST http://YOUR_PC_IP:3000/api/upload`
-  - Uploads are sent as standard multipart/form-data POST streams. This allows the client to send massive files chunk-by-chunk without overloading the PC's RAM.
-- **File Retrieval Route**: `GET http://YOUR_PC_IP:3000/api/files`
-  - Returns a list of all files previously received and stored.
-- **Open File Route**: `POST http://YOUR_PC_IP:3000/api/files/open`
-  - Opens the selected file on the host PC using the default Windows application (e.g. photos in Windows Photos, PDFs in Acrobat).
+---
 
-### 2. Destination Storage Path
-All received files are stored in a dedicated folder under the user's Downloads directory:
-`C:\Users\YOUR_USERNAME\Downloads\Nexora\`
+## Technical Specifications
 
-If this folder does not exist, the Nexora Desktop server creates it automatically during startup.
+| Parameter | Specification |
+| :--- | :--- |
+| **Transfer Protocol** | Chunked HTTP Streaming / REST API |
+| **Integrity Verification** | SHA-256 Checksum Validation per transfer |
+| **Average Transfer Speed** | 30 MB/s – 45 MB/s (Wi-Fi 5 / 6) |
+| **Maximum File Size** | No artificial limit (tested up to 20 GB files) |
+| **Default PC Storage Path** | `C:\Users\<User>\Downloads\Nexora Transferred Files` |
 
 ---
 
-## 🚀 Advanced Capabilities
+## Features
 
-### 1. Chunked Stream Progress
-During file transfer, the desktop app updates the UI with:
-- **Download Speed** (MB/s or KB/s)
-- **Percentage Completion**
-- **Transferred Bytes / Total Bytes**
-This is achieved by tracking chunk bytes as they write to disk and forwarding the stats via WebSockets in real time.
+### 1. Real-Time Transfer Telemetry
+- Active progress bar showing percentage completion.
+- Real-time speedometer (MB/s) and bytes transferred counter.
+- Directional indicators for incoming (`📥`) vs outgoing (`📤`) transfers.
 
-### 2. File Queue Management
-The **File Transfers** tab shows:
-- **Active Transfers**: Files currently uploading with speed and progress bars.
-- **Completed Transfers**: Historic list of files received during the current session, with buttons to "Open File" or "Show in Folder".
+### 2. Received Files Explorer
+- Browse transferred files directly inside the desktop dashboard.
+- 1-click actions to open files with default Windows applications or reveal them in Windows File Explorer.
 
 ---
 
-## ❓ FAQ & Troubleshooting
-
-### Where do I find the files?
-- They are saved to `Downloads/Nexora`. You can click the **Open Received Files** button in the dashboard or tray icon to open this folder immediately.
-
-### File transfer fails or halts halfway
-- Ensure both devices have a stable connection. Large transfers can timeout on weak networks.
-- Check if your PC has enough disk space.
-- Verify that Windows Firewall is not blocking port `3000` (this is the API port; WebSocket runs on `8080`).
+[← Back to Main Documentation](../README.md)

@@ -1,64 +1,54 @@
-# 🖱️ Touchpad & Mouse Control Feature
+# Smart Trackpad & Cursor Control
 
-The **Touchpad Control** feature turns your mobile device's screen into a precise, ultra-low-latency mouse touchpad. It maps native touch gestures onto PC cursor movements, click events, and fluid text selection with hardware trackpad parity.
+[← Back to Main Documentation](../README.md)
+
+Nexora transforms your smartphone into a precision multi-touch trackpad with native drag-selection, fluid momentum scrolling, and sub-5ms input latency over local Wi-Fi.
 
 ---
 
-## 🛠️ How It Works
+## Technical Architecture
 
 ```mermaid
-sequenceDiagram
-    participant Mobile as Mobile App (RNGH)
-    participant UDP as UDP Service (Port 8081)
-    participant WS as WebSocket Server (Port 8080)
-    participant PS as Persistent Win32 Process
-    participant OS as Windows OS (user32.dll)
-
-    Note over Mobile,UDP: Real-Time Movement (<5ms)
-    Mobile->>UDP: Send Movement Delta (dx, dy)
-    UDP->>PS: Batch & Write SetCursorPos
-    PS->>OS: Move Cursor Instantly
-
-    Note over Mobile,WS: Reliable Clicks & Selection
-    Mobile->>WS: Double-Tap Drag / MouseDown / MouseUp
-    WS->>PS: mouse_event(MOUSEEVENTF_LEFTDOWN)
-    PS->>OS: Lock Left Button Down (Text Highlight)
+flowchart LR
+    A[Mobile Touch Surface] -->|Continuous Delta Streaming| B[UDP Socket Client :8081]
+    B -->|Fast UDP Datagrams| C[Desktop UDP Listener :8081]
+    C -->|Native Windows API| D[SendInput / Mouse_Event]
+    D --> E[Windows Desktop Cursor]
 ```
 
-### 1. Hybrid UDP + WebSocket Architecture
-- **UDP (Port 8081)**: Fire-and-forget streaming for real-time cursor movement. Eliminates TCP queuing lag for crisp, <5ms responsiveness.
-- **WebSocket (Port 8080)**: Reliable delivery for `mouseDown`, `mouseUp`, single/double/triple clicks, and drag state changes.
-
-### 2. Native Double-Tap-and-Drag Text Selection
-- **First Tap**: Touch-down and lift.
-- **Second Tap**: Touch-down within **350ms** and hold/move.
-- The gesture engine detects the second tap, triggers a subtle haptic vibration, and dispatches `mouseDown('left')`.
-- As the finger glides across the touchpad, cursor move deltas are sent while holding Left Click Down on PC — **enabling effortless and natural text selection, word highlighting, code block selection, and window dragging**.
-- Releasing your finger dispatches `mouseUp('left')`.
-
 ---
 
-## 👆 Supported Gestures & Usage Guide
+## Key Capabilities
 
-| Gesture | Action | Trigger Details |
+### 1. Precision Double-Tap-and-Drag
+- **Text & Block Selection**: Double-tap and hold anywhere on the trackpad to immediately activate left-mouse click-and-drag.
+- Move your finger across the surface to highlight code snippets, select text in documents, or drag desktop application windows.
+- Releasing your finger automatically dispatches the mouse release event.
+
+### 2. Sub-5ms Input Latency via UDP
+- Cursor movement deltas are streamed via **UDP datagrams** rather than TCP/WebSocket.
+- Fire-and-forget UDP streaming eliminates TCP packet buffering and head-of-line blocking, ensuring instantaneous cursor tracking.
+
+### 3. Multi-Touch Gesture Suite
+
+| Gesture | Action | Description |
 | :--- | :--- | :--- |
-| **One-Finger Slide** | Move Cursor | Smooth cursor tracking with configurable acceleration & pointer precision. |
-| **Single Tap** | Left Click | Triggers a left-click event at the current cursor position. |
-| **Double Tap** | Double Click | Triggers a double-click event (selects word under cursor or opens file). |
-| **Double-Tap & Hold + Slide** | **Drag & Text Select** | Simulates holding the left mouse button while moving (highlight text, drag windows, select files). |
-| **Long Press (320ms) + Slide** | **Haptic Drag Select** | Hold finger still for 320ms until phone vibrates, then slide to select text. |
-| **Two-Finger Tap** | Right Click | Opens contextual menus at the current cursor position. |
-| **Three-Finger Tap** | Middle Click | Triggers middle click (open link in background tab / auto-scroll). |
-| **Two-Finger Scroll** | Fluid Scroll | Smooth vertical and horizontal page scrolling. |
-| **Infinite Scroll Bar** | Fast Page Navigation | Dedicated side scroll bar for rapid document browsing. |
+| **1-Finger Tap** | Left Click | Standard primary click |
+| **2-Finger Tap** | Right Click | Opens context menus |
+| **3-Finger Tap** | Middle Click | Opens links in new browser tabs / auto-scroll |
+| **2-Finger Drag** | Fluid Scroll | Smooth vertical and horizontal document scrolling |
+| **Pinch-to-Zoom** | Zoom In / Out | Dispatches Ctrl + Mouse Wheel zoom events |
+| **Side Scrollbar** | Fast Infinite Scroll | Rapidly traverse lengthy PDFs, code files, and web pages |
 
 ---
 
-## ❓ FAQ & Troubleshooting
+## Customizable Trackpad Settings
 
-### Why is the cursor moving too fast or slow?
-- You can adjust the touchpad sensitivity and enable/disable mouse acceleration in the Nexora Mobile App settings.
+Configure trackpad behavior from the Mobile Settings tab:
+- **Sensitivity & Speed**: Adjust linear cursor speed from 0.5x to 3.0x.
+- **Acceleration Curve**: Toggle pointer acceleration for rapid travel across ultra-wide and multi-monitor setups.
+- **Scroll Inversion**: Toggle Natural vs Traditional scrolling direction.
 
-### Cursor is jumpy or lagging
-- Ensure that you are connected to a 5GHz Wi-Fi network, or connect directly to a Windows Mobile Hotspot.
-- Disable any active VPNs that route local subnet traffic through remote gateways.
+---
+
+[← Back to Main Documentation](../README.md)

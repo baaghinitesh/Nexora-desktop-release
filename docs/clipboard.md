@@ -1,55 +1,49 @@
-# 📋 Bidirectional Clipboard Sync Feature
+# Bi-Directional Clipboard Synchronization
 
-The **Clipboard Sync** feature connects your phone and your PC's clipboard. Any text you copy on your phone can be immediately pasted on your PC, and vice versa.
+[← Back to Main Documentation](../README.md)
+
+Nexora enables real-time clipboard text synchronization between your Windows PC and mobile phone with zero-click background automation.
 
 ---
 
-## 🛠️ How It Works
-
-Clipboard synchronization runs automatically in the background as long as a mobile client is actively connected.
+## Synchronization Flow
 
 ```mermaid
-graph LR
-    subgraph PC Host
-        PClip[PC Clipboard]
-        PServer[Nexora Desktop Server]
-    end
-    
-    subgraph Mobile Device
-        MClip[Mobile Clipboard]
-        MClient[Nexora Mobile App]
-    end
+sequenceDiagram
+    autonumber
+    participant PC as Windows Clipboard
+    participant SVR as Nexora Desktop Server
+    participant WS as WebSocket Channel (:8080)
+    participant MOB as Mobile Companion
 
-    PClip -->|Monitor/Poll| PServer
-    PServer -->|WebSocket Text| MClient
-    MClient -->|Write| MClip
-    
-    MClip -->|On Focus / Copy| MClient
-    MClient -->|WebSocket Text| PServer
-    PServer -->|Write| PClip
+    Note over PC,MOB: Scenario A: PC to Mobile
+    PC->>SVR: Text Copied on PC (Ctrl + C)
+    SVR->>WS: Broadcast { type: "clipboard_update", data: "...", source: "pc" }
+    WS->>MOB: Received Text -> Set Mobile Clipboard
+
+    Note over PC,MOB: Scenario B: Mobile to PC
+    MOB->>WS: Send { type: "clipboard_sync", data: "...", source: "mobile" }
+    WS->>SVR: Set Windows Native Clipboard
+    SVR->>PC: Ready to Paste on PC (Ctrl + V)
 ```
-
-### 1. Monitoring PC-to-Mobile Clipboard
-The Nexora Desktop server polls the system clipboard at regular intervals (usually every 1.5 seconds) using local shell calls:
-- If it detects a change in the clipboard content (and the active owner is not the WebSocket client itself), it packages the text.
-- The text is transmitted via a WebSocket payload:
-  ```json
-  {
-    "type": "clipboard_sync",
-    "text": "Copied content from PC"
-  }
-  ```
-- The mobile application receives the payload and writes it directly to the mobile device's system clipboard using React Native's Clipboard API.
-
-### 2. Monitoring Mobile-to-PC Clipboard
-- When the mobile app is open and detects clipboard changes, or when the user manually taps the "Sync Clipboard" button, the text is sent via WebSockets.
-- The PC server receives the payload and sets the system clipboard.
 
 ---
 
-## 🔒 Security & Performance Considerations
+## Key Capabilities
 
-- **Local Network Isolation**: Your copied data is sent directly between the phone and the PC over the local network (no third-party cloud server is involved).
-- **Text Only**: Clipboard sync only supports plain text. Images, formatted rich-text, and file paths are ignored to prevent performance issues and excessive memory usage.
-- **Auto-Pause on Idle**: If no devices are connected, clipboard polling halts automatically to conserve system resources.
-- **Sensitive Data Warning**: We recommend disabling clipboard sync inside the settings when copying highly sensitive items (e.g., master passwords or credit card numbers) to avoid unintended broadcast across your local devices.
+### 1. Zero-Click Auto-Sync
+- Whenever you copy text on your computer (`Ctrl + C`), Nexora automatically pushes the string to your phone.
+- Text copied on your mobile device is instantly registered in your PC clipboard for immediate `Ctrl + V` pasting.
+
+### 2. Searchable Clipboard History
+- View a timestamped chronological log of recent clips from both your computer and phone.
+- Filter and search through previous clipboard entries.
+- One-tap buttons to copy any historic snippet to your local clipboard or re-send to your mobile device.
+
+### 3. Local LAN Privacy
+- All clipboard text is transmitted strictly over your private local Wi-Fi router.
+- No cloud relays, third-party servers, or external databases are involved.
+
+---
+
+[← Back to Main Documentation](../README.md)

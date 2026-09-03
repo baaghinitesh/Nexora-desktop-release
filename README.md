@@ -1,16 +1,31 @@
 <div align="center">
 
-# **N E X O R A**
-### Universal PC Remote Control Ecosystem
-*Transform your mobile device into a high-performance wireless trackpad, keyboard, launcher & drawing tablet for Windows*
+<pre>
+███╗   ██╗███████╗██╗  ██╗ ██████╗ ██████╗  █████╗
+████╗  ██║██╔════╝╚██╗██╔╝██╔═══██╗██╔══██╗██╔══██╗
+██╔██╗ ██║█████╗   ╚███╔╝ ██║   ██║██████╔╝███████║
+██║╚██╗██║██╔══╝   ██╔██╗ ██║   ██║██╔══██╗██╔══██║
+██║ ╚████║███████╗██╔╝ ██╗╚██████╔╝██║  ██║██║  ██║
+╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+</pre>
+
+### 60+ Remote PC Controls. Zero Cloud Uploads. Zero Limits. 100% Private.
+
+**Trackpad · Keyboard · App Launcher · Pen Tablet Drawing · Clipboard Sync · Fast File Transfer**
+*Ultra-low latency wireless communication over your private local network — no third-party servers, no accounts.*
 
 <br />
 
-[![Platform: Windows](https://img.shields.io/badge/Platform-Windows%2010%20%7C%2011%20(64--bit)-0078D4?style=flat-square&logo=windows&logoColor=white)](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest)
-[![Platform: Android](https://img.shields.io/badge/Platform-Android%208.0%2B-3DDC84?style=flat-square&logo=android&logoColor=white)](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest)
-[![Desktop Version](https://img.shields.io/badge/Desktop-v1.0.4-0284c7?style=flat-square)](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest)
-[![Mobile Version](https://img.shields.io/badge/Mobile-v1.0.7-10b981?style=flat-square)](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest)
+[![Microsoft Store](https://img.shields.io/badge/Microsoft%20Store-Get%20on%20Windows-0078D4?style=for-the-badge&logo=microsoft&logoColor=white)](https://apps.microsoft.com/detail/9P6DZKBRT77H?hl=en-us&gl=IN&ocid=pdpshare)
+[![Google Play](https://img.shields.io/badge/Google%20Play-Get%20on%20Android-34A853?style=for-the-badge&logo=google-play&logoColor=white)](https://play.google.com/store/apps/details?id=com.launchyourconcept.nexora)
+[![GitHub Releases](https://img.shields.io/badge/GitHub%20Releases-Direct%20Downloads-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest)
+
+<br /><br />
+
+[![Desktop: v1.0.4](https://img.shields.io/badge/Desktop-v1.0.4-0284c7?style=flat-square&logo=windows&logoColor=white)](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest)
+[![Mobile: v1.0.7](https://img.shields.io/badge/Mobile-v1.0.7-10b981?style=flat-square&logo=android&logoColor=white)](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-gray?style=flat-square)](LICENSE)
+[![Maintained by: Launch Your Concept](https://img.shields.io/badge/Maintained%20by-Launch%20Your%20Concept-6366f1?style=flat-square)](https://www.launchyourconcept.com)
 
 <br />
 
@@ -18,21 +33,23 @@
 
 <br /><br />
 
-**[Download Windows Desktop App (.exe)](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest)**
+**[Download Windows Desktop App (.exe)](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest/download/Nexora-Setup.exe)**
 &nbsp;&nbsp;•&nbsp;&nbsp;
-**[Download Android Mobile App (.apk)](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest)**
+**[Download Android Mobile App (.apk)](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest/download/Nexora-Mobile.apk)**
+&nbsp;&nbsp;•&nbsp;&nbsp;
+**[Microsoft Store](https://apps.microsoft.com/detail/9P6DZKBRT77H?hl=en-us&gl=IN&ocid=pdpshare)**
 &nbsp;&nbsp;•&nbsp;&nbsp;
 **[Official Website](https://www.launchyourconcept.com)**
 &nbsp;&nbsp;•&nbsp;&nbsp;
-**[Support & Contact](https://www.launchyourconcept.com/contact)**
+**[Contact Support](https://www.launchyourconcept.com/contact)**
 
 </div>
 
 ---
 
-## Overview
+## 🌟 Overview
 
-**Nexora** is an ultra-low latency wireless control ecosystem that turns any Android smartphone into a remote command hub for Windows PCs. Engineered for seamless local communication over Wi-Fi, Nexora gives you complete command over your computer without cables, third-party cloud intermediaries, or hardware dongles.
+**Nexora** is an ultra-low latency wireless control ecosystem that turns your Android smartphone into a remote command hub for Windows PCs. Engineered for seamless local communication over Wi-Fi, Nexora gives you complete control over your computer without cables, third-party cloud intermediaries, or hardware dongles.
 
 Nexora is designed, engineered, and maintained by **[Launch Your Concept](https://www.launchyourconcept.com/)**.
 
@@ -43,59 +60,34 @@ Nexora is designed, engineered, and maintained by **[Launch Your Concept](https:
 | Windows Desktop Client | Android Mobile Companion |
 | :--- | :--- |
 | **Latest Release:** `v1.0.4` | **Latest Release:** `v1.0.7` |
-| **Format:** Installer (`Nexora-Setup.exe`) | **Format:** Package (`Nexora-Mobile.apk`) |
 | **Requirements:** Windows 10 / 11 (64-bit) | **Requirements:** Android 8.0 (Oreo) or higher |
-| **Download:** [Nexora-Setup.exe](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest/download/Nexora-Setup.exe) | **Download:** [Nexora-Mobile.apk](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest/download/Nexora-Mobile.apk) |
+| **Microsoft Store:** [Get on Windows Store](https://apps.microsoft.com/detail/9P6DZKBRT77H?hl=en-us&gl=IN&ocid=pdpshare) | **Google Play:** [Get on Google Play](https://play.google.com/store/apps/details?id=com.launchyourconcept.nexora) |
+| **Direct Installer:** [Download Nexora-Setup.exe](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest/download/Nexora-Setup.exe) | **Direct APK:** [Download Nexora-Mobile.apk](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest/download/Nexora-Mobile.apk) |
 
 </div>
 
 ---
 
-## Core Capabilities
+## 📚 Feature Documentation & Guides
 
-```
-┌─────────────────────────────────────────────────────────────────────────┐
-│                           NEXORA SUITE                                  │
-├────────────────────┬────────────────────┬───────────────────────────────┤
-│   App Launcher     │   Smart Trackpad   │   Advanced Keyboard           │
-│   Clipboard Sync   │   Pen Tablet Draw  │   High-Speed File Sharing     │
-│   Auto-Discovery   │   Local Security   │   Zero-Cloud Privacy          │
-└────────────────────┴────────────────────┴───────────────────────────────┘
-```
+Explore in-depth documentation for each core capability:
 
-### 1. One-Tap App & Website Launcher
-* **50+ Preset Shortcuts**: Launch browsers, IDEs, games, productivity tools, and Windows utilities with a single tap on your phone.
-* **Instant Multi-Tier Execution**: Electron native shell API execution backed by Windows protocol handlers for immediate response.
-* **Custom Shortcuts**: Add custom executables, arguments, and URLs with customizable vector icons and color tokens.
-
-### 2. Low-Latency Smart Trackpad
-* **Precision Drag-Select**: Native double-tap-and-hold gesture allows you to highlight text, drag windows, and select blocks of code with ease.
-* **Sub-5ms Latency**: Real-time UDP streaming ensures buttery-smooth cursor responsiveness without input lag.
-* **Full Multi-Touch Gestures**: Two-finger fluid scrolling, pinch-to-zoom, two-finger right-click, three-finger middle-click, and infinite scrollbar.
-
-### 3. Advanced Keyboard & Media Hub
-* **Unicode & Emoji Key Injection**: Real-time key injection supports typing all characters, special symbols, and Unicode emojis into any Windows application.
-* **Complete Media Suite**: Play/Pause, Next/Previous Track, Stop, Mute, and Volume sliders.
-* **Windows Navigation**: Function keys (F1–F12), directional arrow navigation, task switcher (`Alt+Tab`), Task Manager (`Ctrl+Shift+Esc`), Snipping Tool (`Win+Shift+S`), and Lock PC (`Win+L`).
-
-### 4. Bi-Directional Clipboard Sync
-* **Universal Real-Time Mirroring**: Copy text on your PC and paste directly on your phone, or copy on your phone and paste on your PC.
-* **Local LAN Encryption**: All synchronized text is transmitted locally over your encrypted Wi-Fi session.
-* **Clipboard History**: Access previous clips, search history, and push selected items instantly.
-
-### 5. Interactive Pen Tablet & Screen Annotation
-* **Live Transparent Overlay**: Mirror drawing strokes from your mobile canvas directly onto an interactive, always-on-top transparent Windows Ghost Window.
-* **Stylus Support**: Pressure sensitivity simulation, multi-color palette, customizable stroke widths, grid guides, and one-tap PNG / PDF export.
-
-### 6. High-Speed Local File Sharing
-* **40+ MB/s Wi-Fi Transfer**: Chunked streaming pipeline with SHA-256 integrity verification.
-* **Direct Explorer Integration**: Transferred photos, videos, and archives land directly in your Windows `Downloads / Nexora Transferred Files` directory.
+| Feature Guide | Description |
+| :--- | :--- |
+| 🚀 **[One-Tap App Launcher](docs/app_launcher.md)** | Instant launching for 50+ preset apps, system settings, and custom shortcut execution |
+| 🖱️ **[Smart Trackpad & Gestures](docs/touchpad.md)** | Native double-tap text selection, sub-5ms UDP streaming, and multi-touch gestures |
+| ⌨️ **[Advanced PC Keyboard](docs/keyboard.md)** | Full Unicode & Emoji typing, modifier locks, media controls, and Windows shortcuts |
+| 📋 **[Clipboard Synchronization](docs/clipboard.md)** | Bi-directional zero-click clipboard sync, timestamped history, and encrypted LAN streaming |
+| 🖊️ **[Pen Tablet & Screen Drawing](docs/drawing_tablet.md)** | Transparent Ghost Window desktop overlay, stylus pressure, and PDF / PNG export |
+| 📁 **[High-Speed File Transfer](docs/file_transfer.md)** | 40+ MB/s Wi-Fi transfers with SHA-256 validation directly to your PC Downloads folder |
+| 🔍 **[Network & Discovery Architecture](docs/network_discovery.md)** | Port mapping, mDNS zero-config pairing, QR code connection, and PC hotspot setup |
+| 🛠️ **[Troubleshooting & Diagnostics](docs/troubleshooting.md)** | 1-click firewall auto-setup, network profile conversion, and connectivity FAQ |
 
 ---
 
-## Technical Architecture
+## 🚀 Technical Architecture
 
-Nexora utilizes an optimized, multi-protocol communication stack designed specifically for private local area networks:
+Nexora utilizes a high-efficiency multi-protocol communication stack designed specifically for private local area networks:
 
 | Protocol / Layer | Port | Function |
 | :--- | :--- | :--- |
@@ -106,21 +98,21 @@ Nexora utilizes an optimized, multi-protocol communication stack designed specif
 
 ---
 
-## Quick Start Guide
+## ⚡ Quick Start Guide
 
 ### Step 1: Install Desktop Host (Windows)
-1. Download **`Nexora-Setup.exe`** from the [Latest Release](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest).
+1. Download **`Nexora-Setup.exe`** from the [Latest Release](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest) or install via the [Microsoft Store](https://apps.microsoft.com/detail/9P6DZKBRT77H?hl=en-us&gl=IN&ocid=pdpshare).
 2. Run the installer. Inbound Windows Defender Firewall rules and background services configure automatically.
 3. Launch Nexora Desktop to display your local IP and QR pairing code.
 
 ### Step 2: Install Mobile Companion (Android)
-1. Download **`Nexora-Mobile.apk`** from the [Latest Release](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest).
-2. Install the APK on your Android device.
-3. Launch Nexora Mobile, tap **Connect**, and scan the QR code on your PC screen.
+1. Download **`Nexora-Mobile.apk`** from the [Latest Release](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest) or install via [Google Play](https://play.google.com/store/apps/details?id=com.launchyourconcept.nexora).
+2. Launch Nexora Mobile on your Android device.
+3. Tap **Connect** and scan the QR code on your PC screen!
 
 ---
 
-## Application Showcase
+## 📸 Application Showcase
 
 ### Desktop Control Hub
 
@@ -136,7 +128,7 @@ Nexora utilizes an optimized, multi-protocol communication stack designed specif
 
 ---
 
-## Privacy & Security
+## 🔒 Privacy & Security
 
 * **100% Local LAN Communication**: All cursor movements, keystrokes, clipboard data, and file transfers stay strictly on your local Wi-Fi router.
 * **No Telemetry or Tracking**: No user keystroke logging, cloud uploads, or account registrations required.
@@ -144,7 +136,7 @@ Nexora utilizes an optimized, multi-protocol communication stack designed specif
 
 ---
 
-## Developer & Maintenance Credits
+## 🏢 Developer & Maintenance Credits
 
 Nexora is developed, maintained, and supported by **[Launch Your Concept](https://www.launchyourconcept.com/)**.
 

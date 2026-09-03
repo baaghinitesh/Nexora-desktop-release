@@ -1,65 +1,62 @@
-# 🌐 Network Discovery & Connectivity Guide
+# Network Architecture & Auto-Discovery
 
-Nexora supports multiple methods to discover and connect your mobile device and PC, whether you are on a home Wi-Fi network, a mobile hotspot, or using Bluetooth.
+[← Back to Main Documentation](../README.md)
+
+Nexora utilizes a zero-configuration local networking engine that enables phones and PCs to discover and pair instantly without requiring static IP configuration.
 
 ---
 
-## 🛠️ Connection Methods
+## Network Architecture & Port Map
 
-```mermaid
-graph TD
-    A[Mobile Client] -->|Connection Attempt| B{Select Network Type}
-    B -->|WiFi / LAN| C[mDNS / Bonjour Auto-Discovery]
-    B -->|WiFi / LAN| D[Manual IP Address]
-    B -->|Mobile Hotspot| E[Hotspot Subnet Scanner]
-    B -->|Bluetooth| F[Bluetooth Scan & Connect]
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│                        NEXORA PORT ALLOCATION                          │
+├───────────────┬──────────┬─────────────────────────────────────────────┤
+│ Port          │ Protocol │ Purpose                                     │
+├───────────────┼──────────┼─────────────────────────────────────────────┤
+│ TCP 3000      │ HTTP     │ REST API, QR code generation, File Uploads  │
+│ TCP 8080      │ WS       │ Real-time events, Keyboard, Clipboard sync  │
+│ UDP 8081      │ UDP      │ Ultra-low latency mouse movement streaming  │
+│ UDP 5353      │ mDNS     │ Multicast DNS automatic zero-config discover│
+└───────────────┴──────────┴─────────────────────────────────────────────┘
 ```
 
 ---
 
-## 1. Wi-Fi Connection & mDNS Discovery
+## Discovery & Pairing Methods
 
-When both devices are on the same local Wi-Fi network, discovery is fully automated.
+```mermaid
+flowchart TD
+    Start[User Opens Mobile App] --> Choice{Discovery Method}
+    Choice -->|Method 1| QR[Scan QR Code on PC Screen]
+    Choice -->|Method 2| mDNS[Auto-Discover Host via mDNS :5353]
+    Choice -->|Method 3| Manual[Enter Local IP + 4-Digit PIN]
+    Choice -->|Method 4| Hotspot[Auto-Detect PC Mobile Hotspot 192.168.137.1]
+    
+    QR --> Pair[Pairing Verification API :3000]
+    mDNS --> Pair
+    Manual --> Pair
+    Hotspot --> Pair
+    
+    Pair --> Connect[Establish Persistent WS :8080 & UDP :8081 Channels]
+```
 
-### How mDNS Works:
-- The desktop app registers a local service named `_nexora._tcp` on your network using the `bonjour-service` library.
-- The mobile app scans for active `_nexora._tcp` Bonjour records.
-- When found, it automatically retrieves the PC's hostname, local IP address, and API port, allowing connection without typing any IP address.
+### 1. Instant QR Code Pairing (Recommended)
+- The desktop app displays a dynamic QR code on the Dashboard.
+- Scanning the QR code with the mobile camera transfers the exact IP address, port, and security token in one step.
 
----
+### 2. Zero-Configuration mDNS Discovery
+- The desktop host advertises the `_nexora._tcp.local` service via multicast DNS (Bonjour).
+- The mobile app automatically scans the local network and lists active Nexora hosts.
 
-## 2. Mobile Hotspot Connection
+### 3. Manual IP & Security PIN
+- Manually enter your computer's local IPv4 address (e.g. `192.168.1.105`) and the 4-digit security PIN displayed on your PC screen.
 
-If Wi-Fi is unavailable (e.g. traveling or public network blocks), you can connect by enabling Mobile Hotspot on your PC.
-
-### Subnet Handling
-When your phone connects to your PC's hotspot, the phone is assigned an IP inside a specific subnet. Nexora handles these common hotspot IP spaces automatically:
-- **Windows Hotspot Subnet**: Typically `192.168.137.x` (PC is host `192.168.137.1`).
-- **Android Hotspot Subnet**: Typically `192.168.43.x`.
-- **iPhone Hotspot Subnet**: Typically `172.20.10.x`.
-
-The desktop app detects all active network adapters (including virtual adapters created by hotspots) and displays all detected IP addresses. Simply select or input the active adapter IP in the mobile app.
-
----
-
-## 3. Bluetooth Connectivity (Experimental)
-
-Bluetooth provides an alternative connection channel when local IP networking is blocked or restricted.
-
-### How it works:
-- **Desktop Peripheral**: The desktop app sets up a Bluetooth Low Energy (BLE) peripheral using `@abandonware/noble` (or similar node bindings) to advertise its service.
-- **Mobile Scanning**: The mobile app scans for BLE peripherals advertising the Nexora Service UUID.
-- **Connection**: Once connected, controls are serialized and sent over a Bluetooth GATT Characteristic instead of WebSockets.
-
-*Note: Bluetooth throughput is lower than Wi-Fi. It is recommended primarily for mouse and keyboard control, not for file transfer.*
+### 4. PC Mobile Hotspot Mode (Offline / No Wi-Fi Router)
+- Turn on **Mobile Hotspot** in Windows Settings (*Network & Internet → Mobile hotspot*).
+- Connect your phone to your PC hotspot.
+- Nexora automatically detects the default gateway (`192.168.137.1`) for instant connection.
 
 ---
 
-## 🛡️ Firewall & Profile Requirements
-
-Local network connections can be blocked by Windows Security if your network profile is incorrect.
-
-### Network Category Configuration
-Windows Firewall blocks inbound connections on **Public** networks by default.
-- **WiFi**: Ensure your connection is set to **Private** in Windows Network Settings.
-- **Hotspot**: The virtual hotspot interface is frequently set to Public. Run `set-network-private.bat` as an Administrator to change it to Private, which opens the interface for mobile connections.
+[← Back to Main Documentation](../README.md)
