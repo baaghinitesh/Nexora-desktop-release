@@ -1,63 +1,62 @@
-# ⌨️ Real-Time Keyboard Input Feature
+# ⌨️ Real-Time Keyboard & Media Control Feature
 
-The **Keyboard Input** feature allows you to type on your Windows PC using your mobile device's virtual keyboard. It supports standard keys, modifier keys (Ctrl, Alt, Shift, Win), and hotkeys (e.g., Copy/Paste, Undo).
+The **Keyboard Input & Media Control** feature allows you to type into any application on your Windows PC using your mobile device's virtual keyboard, with full emoji support, holdable modifiers, dedicated media playback controls, browser navigation, and Windows shortcuts.
 
 ---
 
 ## 🛠️ How It Works
 
-To achieve instant keystroke response, Nexora uses a persistent PowerShell process on the host PC to inject keystrokes directly into the Windows OS input stream.
-
 ```mermaid
 graph TD
-    A[Mobile Keyboard Press] -->|WebSocket JSON| B[Nexora Server Node.js]
-    B -->|StdIn Command| C[Persistent PowerShell Process]
-    C -->|Win32 SendInput API| D[Active Window Application]
+    A[Mobile Keyboard / Shortcut Press] -->|WebSocket JSON| B[Nexora Server Node.js]
+    B -->|StdIn Stream Command| C[Persistent Win32 Process]
+    C -->|C# SendUnicodeString / SendInput| D[Active Window Application]
 ```
 
-### 1. The Persistent Process Architecture
-- **Legacy Approach (v1.0.1)**: Every keypress spawned a new PowerShell instance. This added 200ms–500ms of startup latency per keystroke, rendering typing unusable.
-- **Current Optimized Approach (v1.0.2+)**: A single PowerShell process is launched during Nexora's startup. It remains open in the background, listening on standard input (`stdin`) for raw keycodes. When a key is typed on the mobile app, Node sends the keycode to `stdin`, which is immediately executed by the persistent process, resulting in sub-millisecond latency.
+### 1. Persistent Process with C# `SendInput` Engine
+- A persistent background PowerShell process is initialized at desktop startup with compiled inline C# classes (`KeyboardControl`).
+- Keystrokes are transmitted via `stdin` pipes, resulting in **sub-millisecond (<1ms) execution latency** without spawning child processes per keystroke.
 
-### 2. Key Injection Method
-PowerShell executes a compiled C# inline assembly wrapper that uses the Win32 `SendInput` API.
-Unlike simple `SendKeys` commands (which can be blocked by secure applications or fail in games), `SendInput` operates at the driver level, simulating physical hardware keyboard interrupts.
-
-### 3. Payload Protocol
-Keystroke payloads are sent over WebSockets:
-```json
-{
-  "type": "keyboard_input",
-  "key": "A",
-  "modifiers": ["ctrl", "shift"],
-  "keyCode": 65,
-  "action": "press"
-}
-```
+### 2. Full Unicode & Emoji Injection (`KEYEVENTF_UNICODE`)
+- Standard Win32 virtual keycodes only support standard ASCII characters, which previously caused emojis to type as `?`.
+- Nexora implements **C# `SendUnicodeString`** using `KEYEVENTF_UNICODE (0x0004)` flags with UTF-16 surrogate pair handling.
+- When you type emojis (😀🔥🚀⚡) or non-Latin characters from your mobile keyboard, they are injected natively into the active PC text buffer.
 
 ---
 
-## 🚀 Key Mappings & Advanced Features
+## 🎮 Extended Control Panels
 
-### 1. Text Paste Mode
-When typing long paragraphs, the mobile app packages the entire string and sends it as a single chunk. The PowerShell script processes it using a clipboard fallback or character-by-character injection:
-```json
-{ "type": "keyboard_text", "text": "Hello World from Nexora!" }
-```
+### 1. Media & Volume Playback
+- **Play / Pause**: Virtual key `0xB3` (`VK_MEDIA_PLAY_PAUSE`)
+- **Next Track / Previous Track**: Virtual keys `0xB0` / `0xB1`
+- **Stop**: Virtual key `0xB2`
+- **Mute / Unmute**: Virtual key `0xAD` (`VK_VOLUME_MUTE`)
+- **Volume Down / Volume Up**: Virtual keys `0xAE` / `0xAF`
 
-### 2. Supported Hotkeys & Commands
-Nexora intercepts special keycodes to trigger Windows hotkeys:
-- **Ctrl + C / Ctrl + V**: Copy & Paste
-- **Win + D**: Minimize all windows and show Desktop
-- **Alt + Tab**: Toggle active windows
-- **Media Keys**: Play/Pause, Volume Up/Down, Mute
+### 2. Browser & Document Navigation
+- **Browser Back / Forward**: Virtual keys `0xA6` / `0xA7`
+- **Refresh (F5)**: Virtual key `0x74`
+- **Page Up / Page Down**: Virtual keys `0x21` / `0x22`
+- **Home / End**: Virtual keys `0x24` / `0x23`
+
+### 3. PC Shortcuts & System Utilities
+- **Screen Snipping**: `Win + Shift + S` (instant Windows snip tool)
+- **PrintScreen (`PrtSc`)**: Virtual key `0x2C`
+- **Task Manager**: `Ctrl + Shift + Esc`
+- **Lock PC**: `Win + L`
+- **Windows Run**: `Win + R`
+- **Function Keys**: F1 through F12
+
+### 4. Holdable Modifiers
+- Tap **Ctrl**, **Alt**, **Shift**, or **Win** to hold them active.
+- A visual indicator shows held modifiers. Tap again or press **Release All** to release.
 
 ---
 
 ## ❓ FAQ & Troubleshooting
 
-### Typing is not registering in Administrator windows
-- If you are trying to type in an application running with Administrator privileges (like PowerShell, cmd, or Task Manager), Nexora Desktop must also be run as an Administrator.
+### Emojis or special characters appear as `?`
+- Ensure your Nexora Desktop is updated to version 1.0.4+, which includes the `KEYEVENTF_UNICODE` engine.
 
-### Key characters are incorrect (Keyboard Layout Mismatch)
-- Nexora maps raw key events. Ensure the active keyboard layout on your PC matches the keyboard layout on your phone (e.g., QWERTY vs. AZERTY).
+### Keystrokes not registering in Admin applications
+- When typing into elevated programs (e.g. Task Manager, Registry Editor, Admin PowerShell), launch Nexora Desktop as Administrator.

@@ -36,9 +36,10 @@ In Nexora Desktop, go to **Settings** → **Firewall Configuration** and click *
 ### Step 2: Manual PowerShell Commands
 If auto-fix fails, open PowerShell as an Administrator and execute:
 ```powershell
-# Open ports 3000 and 8080
+# Open ports 3000 (HTTP), 8080 (WebSocket), and 8081 (UDP Mouse)
 New-NetFirewallRule -DisplayName "Nexora WebSocket Server" -Direction Inbound -Protocol TCP -LocalPort 8080 -Action Allow -Profile Any
 New-NetFirewallRule -DisplayName "Nexora HTTP Server" -Direction Inbound -Protocol TCP -LocalPort 3000 -Action Allow -Profile Any
+New-NetFirewallRule -DisplayName "Nexora UDP Mouse Server" -Direction Inbound -Protocol UDP -LocalPort 8081 -Action Allow -Profile Any
 
 # Check rules were added
 Get-NetFirewallRule -DisplayName "Nexora*" | Select-Object DisplayName, Enabled, Profile
