@@ -11,7 +11,7 @@
 
 ### 60+ Remote PC Controls. Zero Cloud Uploads. Zero Limits. 100% Private.
 
-**Trackpad · Keyboard · App Launcher · Pen Tablet Drawing · Clipboard Sync · Fast File Transfer**
+**Trackpad · 11-Row Mechanical Keypad & Voice Hub · App Launcher · Pen Tablet Drawing · Clipboard Sync · Fast File Transfer**
 *Ultra-low latency wireless communication over your private local network — no third-party servers, no accounts.*
 
 <br />
@@ -70,17 +70,19 @@ Nexora is designed, engineered, and maintained by **[Launch Your Concept](https:
 
 ## 📚 Feature Documentation & Guides
 
-Explore in-depth documentation for each core capability:
+Explore in-depth documentation for each core capability and architecture:
 
 | Feature Guide | Description |
 | :--- | :--- |
+| 🏗️ **[System Architecture Blueprint](docs/ARCHITECTURE.md)** | Multi-protocol stack, Electron IPC, Win32 SendInput bridge, and lifecycle specs |
 | 🚀 **[One-Tap App Launcher](docs/app_launcher.md)** | Instant launching for 50+ preset apps, system settings, and custom shortcut execution |
 | 🖱️ **[Smart Trackpad & Gestures](docs/touchpad.md)** | Native double-tap text selection, sub-5ms UDP streaming, and multi-touch gestures |
-| ⌨️ **[Advanced PC Keyboard](docs/keyboard.md)** | Full Unicode & Emoji typing, modifier locks, media controls, and Windows shortcuts |
+| ⌨️ **[11-Row Mechanical Keyboard & Speech Hub](docs/keyboard.md)** | Scrollable 0-9 & A-Z rows, real-time voice dictation with punctuation engine, macros, and modifier latches |
 | 📋 **[Clipboard Synchronization](docs/clipboard.md)** | Bi-directional zero-click clipboard sync, timestamped history, and encrypted LAN streaming |
 | 🖊️ **[Pen Tablet & Screen Drawing](docs/drawing_tablet.md)** | Transparent Ghost Window desktop overlay, stylus pressure, and PDF / PNG export |
 | 📁 **[High-Speed File Transfer](docs/file_transfer.md)** | 40+ MB/s Wi-Fi transfers with SHA-256 validation directly to your PC Downloads folder |
 | 🔍 **[Network & Discovery Architecture](docs/network_discovery.md)** | Port mapping, mDNS zero-config pairing, QR code connection, and PC hotspot setup |
+| 🔒 **[Security & Privacy Policy](docs/SECURITY_AND_PRIVACY.md)** | 100% private LAN architecture, zero cloud telemetry, and local authentication |
 | 🛠️ **[Troubleshooting & Diagnostics](docs/troubleshooting.md)** | 1-click firewall auto-setup, network profile conversion, and connectivity FAQ |
 
 ---
@@ -132,7 +134,7 @@ Nexora utilizes a high-efficiency multi-protocol communication stack designed sp
 
 * **100% Local LAN Communication**: All cursor movements, keystrokes, clipboard data, and file transfers stay strictly on your local Wi-Fi router.
 * **No Telemetry or Tracking**: No user keystroke logging, cloud uploads, or account registrations required.
-* **PIN Authentication**: Secure 4-digit PIN pairing ensures only authorized devices can connect to your host computer.
+* **PIN & QR Authentication**: Secure 4-digit PIN and dynamic QR pairing ensure only authorized devices can connect to your host computer.
 
 ---
 

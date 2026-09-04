@@ -1,53 +1,56 @@
-# Smart Trackpad & Cursor Control
+# Smart Trackpad & Cursor Control Engine
 
 [← Back to Main Documentation](../README.md)
 
-Nexora transforms your smartphone into a precision multi-touch trackpad with native drag-selection, fluid momentum scrolling, and sub-5ms input latency over local Wi-Fi.
+Nexora transforms your smartphone into an ultra-low latency multi-touch trackpad with native text drag-selection, fluid momentum scrolling, and sub-5ms input latency over your private local Wi-Fi network.
 
 ---
 
-## Technical Architecture
+## ⚡ Technical Architecture & Sub-5ms UDP Streaming
+
+Cursor movement requires high-frequency polling and instantaneous packet transmission. Nexora transmits movement deltas via **fire-and-forget UDP datagrams** rather than TCP sockets:
 
 ```mermaid
 flowchart LR
-    A[Mobile Touch Surface] -->|Continuous Delta Streaming| B[UDP Socket Client :8081]
-    B -->|Fast UDP Datagrams| C[Desktop UDP Listener :8081]
-    C -->|Native Windows API| D[SendInput / Mouse_Event]
-    D --> E[Windows Desktop Cursor]
+    A["📱 Mobile Touch Surface\n(60-120Hz Touch Listener)"] -->|Raw Delta Stream\n(dx, dy)| B["Pointer Acceleration Filter"]
+    B -->|Packed UDP Datagram| C["UDP Socket Client :8081"]
+    C -->|Local Wi-Fi Network| D["Desktop UDP Listener :8081"]
+    D -->|Fast Packet Unpacker| E["Win32 SendInput / mouse_event"]
+    E --> F["🖥️ Windows Desktop Cursor Translation"]
 ```
+
+### Why UDP for Mouse Movements?
+- **Zero Head-of-Line Blocking**: Unlike TCP, UDP does not pause the stream to retransmit dropped packets.
+- **Sub-5ms Latency**: Packets are dispatched immediately upon finger translation.
+- **Superseding Delta Packets**: If an older delta packet arrives out of order, the newer packet has already positioned the cursor correctly.
 
 ---
 
-## Key Capabilities
+## 🖱️ Multi-Touch Gesture Matrix
 
-### 1. Precision Double-Tap-and-Drag
-- **Text & Block Selection**: Double-tap and hold anywhere on the trackpad to immediately activate left-mouse click-and-drag.
-- Move your finger across the surface to highlight code snippets, select text in documents, or drag desktop application windows.
-- Releasing your finger automatically dispatches the mouse release event.
-
-### 2. Sub-5ms Input Latency via UDP
-- Cursor movement deltas are streamed via **UDP datagrams** rather than TCP/WebSocket.
-- Fire-and-forget UDP streaming eliminates TCP packet buffering and head-of-line blocking, ensuring instantaneous cursor tracking.
-
-### 3. Multi-Touch Gesture Suite
+Nexora delivers full parity with physical laptop trackpads and multi-button mice:
 
 | Gesture | Action | Description |
 | :--- | :--- | :--- |
-| **1-Finger Tap** | Left Click | Standard primary click |
-| **2-Finger Tap** | Right Click | Opens context menus |
-| **3-Finger Tap** | Middle Click | Opens links in new browser tabs / auto-scroll |
-| **2-Finger Drag** | Fluid Scroll | Smooth vertical and horizontal document scrolling |
-| **Pinch-to-Zoom** | Zoom In / Out | Dispatches Ctrl + Mouse Wheel zoom events |
-| **Side Scrollbar** | Fast Infinite Scroll | Rapidly traverse lengthy PDFs, code files, and web pages |
+| **1-Finger Swipe** | **Cursor Movement** | Smooth, high-precision cursor navigation across single or multi-monitor setups |
+| **1-Finger Tap** | **Primary Left Click** | Standard button click for focusing elements, opening files, or selecting objects |
+| **2-Finger Tap** | **Secondary Right Click** | Opens Windows context menus and secondary option popups |
+| **3-Finger Tap** | **Middle Mouse Click** | Opens links in new browser background tabs or activates autoscroll |
+| **Double-Tap & Slide** | **Drag & Text Selection** | Double-tap and keep finger held down to drag windows, highlight text in IDEs, or select blocks |
+| **Long-Press (320ms)** | **Haptic Drag Lock** | Latches left mouse button down with haptic pulse confirmation for effortless window repositioning |
+| **2-Finger Slide** | **Fluid Document Scroll** | Natural vertical and horizontal scrolling through web pages, PDF documents, and code files |
+| **Side Scrollbar** | **Infinite Fast Traversal** | Rapidly navigate through 10,000+ line documents by sliding along the right edge of the screen |
+| **Pinch-to-Zoom** | **Zoom In / Out** | Synthesizes `Ctrl + Mouse Wheel` events to scale web pages and canvas views |
 
 ---
 
-## Customizable Trackpad Settings
+## ⚙️ Precision & Sensitivity Settings
 
 Configure trackpad behavior from the Mobile Settings tab:
-- **Sensitivity & Speed**: Adjust linear cursor speed from 0.5x to 3.0x.
-- **Acceleration Curve**: Toggle pointer acceleration for rapid travel across ultra-wide and multi-monitor setups.
-- **Scroll Inversion**: Toggle Natural vs Traditional scrolling direction.
+- **Tracking Sensitivity**: Adjust linear cursor speed multiplier (0.5x to 3.0x).
+- **Pointer Acceleration**: Non-linear velocity curve that accelerates cursor speed during rapid finger flicks while maintaining pixel precision during slow movements.
+- **Scroll Inversion**: Toggle between Natural (macOS-style) and Traditional (Windows-style) scroll directions.
+- **Haptic Feedback**: Fine-tune tactile vibration intensity for clicks, taps, and drag locks.
 
 ---
 
