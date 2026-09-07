@@ -1,21 +1,21 @@
 {
   "desktop": {
-    "latest_version": "1.0.4",
-    "min_version": "1.0.4",
+    "latest_version": "1.0.8",
+    "min_version": "1.0.8",
     "release_url": "https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest",
     "github_download_url": "https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest/download/Nexora-Setup.exe",
     "microsoft_store_url": "https://apps.microsoft.com/detail/9P6DZKBRT77H?hl=en-us&gl=IN&ocid=pdpshare",
     "microsoft_store_deep_link": "ms-windows-store://pdp/?ProductId=9P6DZKBRT77H",
-    "release_notes": "Complete modern UI redesign from scratch with sidebar navigation, three-way theme support (Dark, Light, System Default), official Nexora & Launch Your Concept branding, vector SVG icon system, and ultra-low latency wireless control.",
+    "release_notes": "Synchronized v1.0.8 release with unified desktop and mobile ecosystems, enhanced stability, low-latency control optimizations, and bug fixes.",
     "force_update": false
   },
   "android": {
-    "latest_version": "1.0.7",
-    "min_version": "1.0.7",
+    "latest_version": "1.0.8",
+    "min_version": "1.0.8",
     "release_url": "https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest",
     "github_download_url": "https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest/download/Nexora-Mobile.apk",
     "play_store_url": "https://play.google.com/store/apps/details?id=com.launchyourconcept.nexora",
-    "release_notes": "Trackpad drag-selection, live pen drawing overlay ghost window, unicode emoji keyboard injection, high-speed file transfer, and stability improvements.",
+    "release_notes": "Unified v1.0.8 release with enhanced trackpad responsiveness, clipboard sync improvements, file transfer speed, and stability fixes.",
     "force_update": false
   }
 }

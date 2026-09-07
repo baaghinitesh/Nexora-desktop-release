@@ -22,8 +22,8 @@
 
 <br /><br />
 
-[![Desktop: v1.0.4](https://img.shields.io/badge/Desktop-v1.0.4-0284c7?style=flat-square&logo=windows&logoColor=white)](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest)
-[![Mobile: v1.0.7](https://img.shields.io/badge/Mobile-v1.0.7-10b981?style=flat-square&logo=android&logoColor=white)](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest)
+[![Desktop: v1.0.8](https://img.shields.io/badge/Desktop-v1.0.8-0284c7?style=flat-square&logo=windows&logoColor=white)](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest)
+[![Mobile: v1.0.8](https://img.shields.io/badge/Mobile-v1.0.8-10b981?style=flat-square&logo=android&logoColor=white)](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-gray?style=flat-square)](LICENSE)
 [![Maintained by: Launch Your Concept](https://img.shields.io/badge/Maintained%20by-Launch%20Your%20Concept-6366f1?style=flat-square)](https://www.launchyourconcept.com)
 
@@ -59,7 +59,7 @@ Nexora is designed, engineered, and maintained by **[Launch Your Concept](https:
 
 | Windows Desktop Client | Android Mobile Companion |
 | :--- | :--- |
-| **Latest Release:** `v1.0.4` | **Latest Release:** `v1.0.7` |
+| **Latest Release:** `v1.0.8` | **Latest Release:** `v1.0.8` |
 | **Requirements:** Windows 10 / 11 (64-bit) | **Requirements:** Android 8.0 (Oreo) or higher |
 | **Microsoft Store:** [Get on Windows Store](https://apps.microsoft.com/detail/9P6DZKBRT77H?hl=en-us&gl=IN&ocid=pdpshare) | **Google Play:** [Get on Google Play](https://play.google.com/store/apps/details?id=com.launchyourconcept.nexora) |
 | **Direct Installer:** [Download Nexora-Setup.exe](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest/download/Nexora-Setup.exe) | **Direct APK:** [Download Nexora-Mobile.apk](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest/download/Nexora-Mobile.apk) |
