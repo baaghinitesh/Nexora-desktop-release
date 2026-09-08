@@ -110,6 +110,8 @@ Install from [Google Play](https://play.google.com/store/apps/details?id=com.nex
 
 Make sure your phone and PC are on the same Wi-Fi network (or your PC's Mobile Hotspot). Tap **Connect** in the app and scan the QR code on your PC screen. You're in — start controlling your PC immediately.
 
+> **First-time only.** The very first connection requires a QR scan or PIN entry to pair your devices. After that, Nexora remembers your PC automatically — just open the app and it reconnects instantly with no scan or PIN needed.
+
 ---
 
 ## Works on Wi-Fi & Mobile Hotspot
@@ -309,19 +311,9 @@ The Windows desktop app is built on **Electron + Node.js**. Keystrokes are injec
 
 <div align="center">
 
-<img src="screenshots/nexora-desktop-dashboard.png" width="780" alt="Nexora Desktop — Dashboard & QR Pairing" />
-
-*Dashboard & QR Pairing*
-
-</div>
-
-<br />
-
-<div align="center">
-
-| Clipboard Manager | Settings |
-| :---: | :---: |
-| <img src="screenshots/nexora-desktop-clipboardpage.png" width="380" alt="Clipboard Manager" /> | <img src="screenshots/nexora-desktop-settings.png" width="380" alt="Desktop Settings" /> |
+| Dashboard & QR Pairing | Clipboard Manager | Settings |
+| :---: | :---: | :---: |
+| <img src="screenshots/nexora-desktop-dashboard.png" width="280" alt="Dashboard & QR Pairing" /> | <img src="screenshots/nexora-desktop-clipboardpage.png" width="280" alt="Clipboard Manager" /> | <img src="screenshots/nexora-desktop-settings.png" width="280" alt="Desktop Settings" /> |
 
 </div>
 
@@ -398,6 +390,12 @@ When downloading `Nexora-Setup.exe` directly from GitHub, Windows Defender Smart
 
 <a href="https://www.launchyourconcept.com/projects">
   <img src="assets/logo-nexora-withbackground.png" width="340" alt="Nexora by Launch Your Concept" />
+</a>
+
+<br /><br />
+
+<a href="https://www.launchyourconcept.com">
+  <img src="assets/launch-your-concept-logo.png" width="200" alt="Launch Your Concept" />
 </a>
 
 <br /><br />
