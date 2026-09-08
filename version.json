@@ -14,7 +14,7 @@
     "min_version": "1.0.8",
     "release_url": "https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest",
     "github_download_url": "https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest/download/Nexora-Mobile.apk",
-    "play_store_url": "https://play.google.com/store/apps/details?id=com.launchyourconcept.nexora",
+    "play_store_url": "https://play.google.com/store/apps/details?id=com.nexoracli",
     "release_notes": "Unified v1.0.8 release with enhanced trackpad responsiveness, clipboard sync improvements, file transfer speed, and stability fixes.",
     "force_update": false
   }

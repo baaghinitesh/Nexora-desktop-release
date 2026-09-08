@@ -5,7 +5,7 @@
 
 [![Platform: Android](https://img.shields.io/badge/Platform-Android%208.0%2B-3DDC84?style=flat-square&logo=android&logoColor=white)](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest)
 [![Version](https://img.shields.io/badge/Version-1.0.8-10b981?style=flat-square)](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest)
-[![Version Code](https://img.shields.io/badge/Version%20Code-10-blue?style=flat-square)](https://play.google.com/store/apps/details?id=com.launchyourconcept.nexora)
+[![Version Code](https://img.shields.io/badge/Version%20Code-10-blue?style=flat-square)](https://play.google.com/store/apps/details?id=com.nexoracli)
 [![License: Proprietary](https://img.shields.io/badge/License-Proprietary-gray?style=flat-square)](https://www.launchyourconcept.com)
 
 <br />
@@ -50,7 +50,7 @@
 | File | Platform | Architecture | Description |
 | :--- | :--- | :--- | :--- |
 | **[`Nexora-Mobile.apk`](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest/download/Nexora-Mobile.apk)** | Android 8.0+ | Universal (ARM64 / ARMv7 / x86) | Standalone Android APK package for direct installation |
-| **Google Play Store** | Android 8.0+ | Device-Optimized Bundle (`.aab`) | [Get on Google Play](https://play.google.com/store/apps/details?id=com.launchyourconcept.nexora) |
+| **Google Play Store** | Android 8.0+ | Device-Optimized Bundle (`.aab`) | [Get on Google Play](https://play.google.com/store/apps/details?id=com.nexoracli) |
 
 ---
 
