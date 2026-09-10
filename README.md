@@ -22,8 +22,8 @@
 
 <br /><br />
 
-[![Desktop: v1.0.8](https://img.shields.io/badge/Desktop-v1.0.8-0284c7?style=flat-square&logo=windows&logoColor=white)](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest)
-[![Mobile: v1.0.8](https://img.shields.io/badge/Mobile-v1.0.8-10b981?style=flat-square&logo=android&logoColor=white)](https://play.google.com/store/apps/details?id=com.nexoracli)
+[![Desktop: v1.0.9](https://img.shields.io/badge/Desktop-v1.0.9-0284c7?style=flat-square&logo=windows&logoColor=white)](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest)
+[![Mobile: v1.0.9](https://img.shields.io/badge/Mobile-v1.0.9-10b981?style=flat-square&logo=android&logoColor=white)](https://play.google.com/store/apps/details?id=com.nexoracli)
 [![License: MIT](https://img.shields.io/badge/License-MIT-gray?style=flat-square)](LICENSE)
 [![Maintained by: Launch Your Concept](https://img.shields.io/badge/Maintained%20by-Launch%20Your%20Concept-6366f1?style=flat-square)](https://www.launchyourconcept.com)
 
@@ -69,7 +69,7 @@ Nexora is a **two-part system**: a lightweight Windows desktop app that runs in 
 
 **Windows Desktop App**
 
-Version &nbsp;`v1.0.8` &nbsp;·&nbsp; Windows 10 / 11 &nbsp;(64-bit)
+Version &nbsp;`v1.0.9` &nbsp;·&nbsp; Windows 10 / 11 &nbsp;(64-bit)
 
 [![Get on Microsoft Store](https://img.shields.io/badge/Get%20on%20Microsoft%20Store-0078D4?style=for-the-badge&logo=microsoft&logoColor=white)](https://apps.microsoft.com/detail/9P6DZKBRT77H?hl=en-us&gl=IN&ocid=pdpshare)
 
@@ -80,7 +80,7 @@ Version &nbsp;`v1.0.8` &nbsp;·&nbsp; Windows 10 / 11 &nbsp;(64-bit)
 
 **Android Mobile App**
 
-Version &nbsp;`v1.0.8` &nbsp;·&nbsp; Android 8.0 (Oreo) or higher
+Version &nbsp;`v1.0.9` &nbsp;·&nbsp; Android 8.0 (Oreo) or higher
 
 [![Get on Google Play](https://img.shields.io/badge/Get%20on%20Google%20Play-34A853?style=for-the-badge&logo=google-play&logoColor=white)](https://play.google.com/store/apps/details?id=com.nexoracli)
 
