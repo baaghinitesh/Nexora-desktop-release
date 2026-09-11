@@ -1,24 +1,24 @@
 {
-  "version": "1.0.9",
-  "versionCode": 11,
+  "version": "1.0.10",
+  "versionCode": 12,
   "desktop": {
-    "latest_version": "1.0.9",
-    "min_version": "1.0.9",
+    "latest_version": "1.0.10",
+    "min_version": "1.0.10",
     "release_url": "https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest",
     "github_download_url": "https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest/download/Nexora-Setup.exe",
     "microsoft_store_url": "https://apps.microsoft.com/detail/9P6DZKBRT77H?hl=en-us&gl=IN&ocid=pdpshare",
     "microsoft_store_deep_link": "ms-windows-store://pdp/?ProductId=9P6DZKBRT77H",
-    "release_notes": "Synchronized v1.0.9 release with unified desktop and mobile ecosystems, enhanced stability, low-latency control optimizations, and bug fixes.",
+    "release_notes": "Synchronized v1.0.10 release with improved update experience, dismissible update modal, accurate store installer detection, stability enhancements, and bug fixes.",
     "force_update": false
   },
   "android": {
-    "latest_version": "1.0.9",
-    "version_code": 11,
-    "min_version": "1.0.9",
+    "latest_version": "1.0.10",
+    "version_code": 12,
+    "min_version": "1.0.10",
     "release_url": "https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest",
     "github_download_url": "https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest/download/Nexora-Mobile.apk",
     "play_store_url": "https://play.google.com/store/apps/details?id=com.nexoracli",
-    "release_notes": "Unified v1.0.9 release with drag-and-drop app reordering, custom branded modal dialogs, enhanced trackpad responsiveness, and stability fixes.",
+    "release_notes": "Unified v1.0.10 release with dismissible update modal, Android 11+ package visibility fixes for Play Store, trackpad responsiveness, and stability fixes.",
     "force_update": false
   }
 }
