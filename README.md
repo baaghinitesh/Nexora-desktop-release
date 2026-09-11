@@ -22,8 +22,8 @@
 
 <br /><br />
 
-[![Desktop: v1.0.9](https://img.shields.io/badge/Desktop-v1.0.10-0284c7?style=flat-square&logo=windows&logoColor=white)](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest)
-[![Mobile: v1.0.9](https://img.shields.io/badge/Mobile-v1.0.10-10b981?style=flat-square&logo=android&logoColor=white)](https://play.google.com/store/apps/details?id=com.nexoracli)
+[![Desktop: v1.0.10](https://img.shields.io/badge/Desktop-v1.0.10-0284c7?style=flat-square&logo=windows&logoColor=white)](https://github.com/baaghinitesh/Nexora-desktop-release/releases/latest)
+[![Mobile: v1.0.10](https://img.shields.io/badge/Mobile-v1.0.10-10b981?style=flat-square&logo=android&logoColor=white)](https://play.google.com/store/apps/details?id=com.nexoracli)
 [![License: MIT](https://img.shields.io/badge/License-MIT-gray?style=flat-square)](LICENSE)
 [![Maintained by: Launch Your Concept](https://img.shields.io/badge/Maintained%20by-Launch%20Your%20Concept-6366f1?style=flat-square)](https://www.launchyourconcept.com)
 
